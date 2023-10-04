@@ -2,16 +2,31 @@
   font-family: "Inter", sans-serif;
   margin: 0;
 }
+body[theme-light="light"] {
+  --bg1-: white;
+  --bg2-: #F0F3FA;
+  --f1-: black;
+  --f2-: #9398bc;
+  --toggle-: linear-gradient(#9398bc, #9398bc);
+  --ball-: #f8f9fe;
+}
+body[theme-dark="dark"] {
+  --bg1-: hsl(230, 17%, 14%);
+  --bg2-: hsl(230, 20%, 18%);
+  --f1-: white;
+  --f2-: #9398bc;
+  --toggle-: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --ball-: hsl(230, 20%, 18%);
+}
 @media (max-width: 377px) {
   body {
     width: 100%;
     min-height: 100vh;
-    background-color: hsl(230, 17%, 14%);
-    color: white;
+    background-color: var(--bg1-);
+    color: var(--f1-);
   }
   .nav {
-    background-color: hsl(230, 20%, 18%);
-    /* background-color: hsl(233, 23%, 52%); */
+    background-color: var(--bg2-);
     width: 100%;
     height: auto;
     border-bottom-left-radius: 25px;
@@ -28,12 +43,12 @@
     font-size: x-large;
   }
   .mainp {
-    color: #9398bc;
+    color: var(--f2-);
     margin-bottom: 1rem;
     font-weight: 900;
   }
   .splitter {
-    background-color: #9398bc;
+    background-color: var(--f2-);
     width: 100%;
     height: 1px;
     margin-bottom: 1rem;
@@ -44,13 +59,13 @@
     margin-bottom: 5rem;
   }
   .mode {
-    color: #9398bc;
+    color: var(--f2-);
     font-weight: 600;
     margin-bottom: 7rem;
   }
   .toggle {
     width: 3.5rem;
-    background-image: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    background-image: var(--toggle-);
     height: 1.5rem;
     border-radius: 10px;
     display: flex;
@@ -59,10 +74,10 @@
   .ball {
     height: 1.3rem;
     width: 1.3rem;
-    background-color: hsl(232, 19%, 15%);
+    background-color: var(--ball-);
     border-radius: 50%;
     margin-left: 2px;
-    transition: 0.5s;
+    transition: 0.5s ease;
   }
   .boxes {
     width: 90%;
@@ -74,7 +89,7 @@
   }
   .box {
     width: calc(100%-10px);
-    background-color: #252b43;
+    background-color: var(--bg2-);
     margin-bottom: 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -92,7 +107,7 @@
   }
   .box .followers {
     margin-top: -1rem;
-    color: #9398bc;
+    color: var(--f2-);
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     margin-bottom: 1.5rem;
@@ -102,11 +117,298 @@
   }
   .namediv .name {
     margin-left: 0.8rem;
-    color: #9398bc;
+    color: var(--f2-);
     font-weight: 900;
   }
-  .main1h1{
-    
+  .main1{
+    width: -webkit-fill-available;
+  }
+  .main1h1 {
+    font-size: x-large;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: flex;
+  }
+  .facebook .namediv .icon {
+    background-image: url(./images/icon-facebook.svg);
+  }
+  .twitter .namediv .icon {
+    background-image: url(./images/icon-twitter.svg);
+  }
+  .instgram .namediv .icon {
+    background-image: url(./images/icon-instagram.svg);
+  }
+  .youtube .namediv .icon {
+    background-image: url(./images/icon-youtube.svg);
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+  }
+  .insights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon1 {
+    width: 20px;
+    height: 20px;
+    transform: translate(40%, 40%);
+    background-repeat: no-repeat;
+    background-image: url(./images/icon-up.svg);
+  }
+  .youtube .icon1 {
+    width: 20px;
+    height: 20px;
+    transform: translate(40%, 40%);
+    background-repeat: no-repeat;
+    background-image: url(./images/icon-down.svg);
+  }
+  .insnum {
+    font-weight: 900;
+  }
+  .insnum {
+    color: green;
+  }
+  .youtube .insnum {
+    color: red;
+  }
+  .youtube {
+    border-color: hsl(348, 97%, 39%) transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+  }
+  .facebook {
+    border-color: hsl(208, 92%, 53%) transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+  }
+  .twitter {
+    border-color: hsl(203, 89%, 53%) transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+  }
+  .instgram {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(
+      to right,
+      hsl(37, 97%, 70%),
+      hsl(329, 70%, 58%)
+    );
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .box1 {
+    width: 100%;
+    background-color: var(--bg2-);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 5px;
+  }
+  .facebook1 .header .icon {
+    background-image: url(./images/icon-facebook.svg);
+  }
+  .twitter1 .header .icon {
+    background-image: url(./images/icon-twitter.svg);
+  }
+  .instgram1 .header .icon {
+    background-image: url(./images/icon-instagram.svg);
+  }
+  .youtube1 .header .icon {
+    background-image: url(./images/icon-youtube.svg);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .header .head {
+    font-weight: 900;
+    color: var(--f2-);
+  }
+  .footer {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer .num {
+    font-weight: 900;
+    font-size: xxx-large;
+  }
+  .box1 .insights .con1 {
+    background-image: url(./images/icon-up.svg);
+    width: 20px;
+    height: 20px;
+    transform: translate(40%, 40%);
+    background-repeat: no-repeat;
+  }
+  .box1 .insights .con1down {
+    background-image: url(./images/icon-down.svg);
+    width: 20px;
+    height: 20px;
+    transform: translate(40%, 40%);
+    background-repeat: no-repeat;
+  }
+  .box1 .insights .per {
+    color: green;
+    font-weight: 900;
+  }
+  .box1 .insights .perdown {
+    color: red;
+    font-weight: 900;
+  }
+}
+
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+/*Desktop*/
+
+@media (min-width: 377px) {
+  body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg1-);
+    color: var(--f1-);
+  }
+  .nav {
+    background-color: var(--bg2-);
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  .navmain {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .mainh1 {
+    inline-size: max-content;
+    font-size: x-large;
+  }
+  .mainp {
+    color: var(--f2-);
+    margin-bottom: 1rem;
+    font-weight: 900;
+  }
+  .splitter {
+    background-color: var(--f2-);
+    width: 100%;
+    height: 1px;
+    margin-bottom: 1rem;
+    display: none;
+  }
+  .switch {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+  }
+  .mode {
+    color: var(--f2-);
+    font-weight: 600;
+    margin-bottom: 7rem;
+    margin-right: 15px;
+  }
+  .toggle {
+    width: 3.5rem;
+    background-image: var(--toggle-);
+    height: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .ball {
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: var(--ball-);
+    border-radius: 50%;
+    margin-left: 2px;
+    transition: 0.5s ease;
+  }
+  .boxes {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem;
+    position: relative;
+    top: -8.313rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .box {
+    width: calc(100% / 4.5);
+    background-color: var(--bg2-);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .box * {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .box .num {
+    margin-top: 0rem;
+    font-size: 4.688rem;
+    font-weight: 900;
+  }
+  .box .followers {
+    margin-top: -1rem;
+    color: var(--f2-);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .namediv {
+    display: flex;
+  }
+  .namediv .name {
+    margin-left: 0.8rem;
+    color: var(--f2-);
+    font-weight: 900;
+  }
+  .main1h1 {
     inline-size: max-content;
     font-size: x-large;
     margin-bottom: 2rem;
@@ -185,83 +487,74 @@
     border-right: 0;
     border-bottom: 0;
   }
-  .box1{
-    width: 100%;
-    background-color: #252b43;
+  .boxes1{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  .box1 {
+    width: 24%;
+    background-color: var(--bg2-);
     margin-bottom: 1rem;
     display: flex;
     flex-flow: column wrap;
     border-radius: 5px;
   }
-  .facebook1 .header .icon{
+  .facebook1 .header .icon {
     background-image: url(./images/icon-facebook.svg);
-
-
   }
-  .twitter1 .header .icon{
+  .twitter1 .header .icon {
     background-image: url(./images/icon-twitter.svg);
-
-
   }
-  .instgram1 .header .icon{
+  .instgram1 .header .icon {
     background-image: url(./images/icon-instagram.svg);
-
-
   }
-  .youtube1 .header .icon{
+  .youtube1 .header .icon {
     background-image: url(./images/icon-youtube.svg);
-
-
   }
-  .header{
-  display: flex;
+  .header {
+    display: flex;
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-}
-  .header .head{
+  }
+  .header .head {
     font-weight: 900;
-    color: #9398bc;
-
-}
-.footer{
+    color: var(--f2-);
+  }
+  .footer {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between
-
+    justify-content: space-between;
   }
-  .footer .num{
+  .footer .num {
     font-weight: 900;
     font-size: xxx-large;
   }
-  .box1 .insights .con1{
+  .box1 .insights .con1 {
     background-image: url(./images/icon-up.svg);
     width: 20px;
     height: 20px;
     transform: translate(40%, 40%);
     background-repeat: no-repeat;
-
   }
-  .box1 .insights .con1down{
+  .box1 .insights .con1down {
     background-image: url(./images/icon-down.svg);
     width: 20px;
     height: 20px;
     transform: translate(40%, 40%);
     background-repeat: no-repeat;
-
   }
-  .box1 .insights .per{
+  .box1 .insights .per {
     color: green;
     font-weight: 900;
-
   }
-  .box1 .insights .perdown{
+  .box1 .insights .perdown {
     color: red;
     font-weight: 900;
-
   }
 }
